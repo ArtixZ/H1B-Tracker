@@ -1,6 +1,6 @@
 const axios = require("axios")
 const FormData = require('form-data')
-const queue = require('async/queue')
+const cheerio = require('cheerio')
 
 const idIterator = require("./idGenerator")()
 
@@ -40,22 +40,49 @@ function fetchResult(id) {
 
 }
 
+function writeMessages(ids, msgs) {
+    console.log()
+}
+
 let currentIt = idIterator.next();
 
 (async function main() {
     while(!currentIt.done) {
         //  const res = await fetchResult(currentIt.value)
-         let reqAry = [],
-         counter = 0
-    
-         while(!currentIt.done && counter<10) {
+        let reqAry = [],
+        counter = 0,
+        ids = [],
+        msgs = [],
+        validMsgs = {}
+
+        while(!currentIt.done && counter<10) {
             reqAry.push(fetchResult(currentIt.value))
+            ids.push(currentIt.value)
+
             currentIt = idIterator.next()
             counter ++
-         }
+        }
     
-        const res = await Promise.all(reqAry)
-        console.log(res)
+        const htmls = await Promise.all(reqAry)
+        
+        console.log(htmls)
+
+        for(let html of htmls) {
+            const $ = cheerio.load(html)
+            const message = $('body > div.main-content-sec.pb40 > form > div > div.container > div > div > div.col-lg-12.appointment-sec.center > div.rows.text-center > h1').text()
+            msgs.push(message)
+
+        }
+
+        for(let i=0; i<msgs.length; i++) {
+            if(!!msgs[i]) {
+                validMsgs[ids[i]] = msgs[i]
+            }
+        }
+        if(Object.keys(validMsgs).length) {
+            writeMessages(validMsgs)
+        }
+
     }
 })()
 
@@ -94,7 +121,6 @@ let currentIt = idIterator.next();
 
 // } while(!currentIt.done)
 
-console.log()
 
 // // assign a callback
 // q.drain(function() {
