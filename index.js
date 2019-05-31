@@ -47,7 +47,9 @@ function writeMessages(ids, msgs) {
 let currentIt = idIterator.next();
 
 (async function main() {
-    while(!currentIt.done) {
+    let banned = false
+
+    while(!currentIt.done && !banned) {
         //  const res = await fetchResult(currentIt.value)
         let reqAry = [],
         counter = 0,
@@ -64,11 +66,16 @@ let currentIt = idIterator.next();
         }
     
         const htmls = await Promise.all(reqAry)
-        
+
         console.log(htmls)
 
         for(let html of htmls) {
             const $ = cheerio.load(html)
+            if($('label[for=accessviolation]').text()) {
+                console.log($('label[for=accessviolation]').text().trim())
+                banned = true;
+                break
+            }
             const message = $('body > div.main-content-sec.pb40 > form > div > div.container > div > div > div.col-lg-12.appointment-sec.center > div.rows.text-center > h1').text()
             msgs.push(message)
 
