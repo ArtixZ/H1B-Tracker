@@ -3,9 +3,10 @@ const FormData = require('form-data')
 const cheerio = require('cheerio')
 
 const idIterator = require("./idGenerator")()
-
+const config = require("./configuration.json")
 const url = "https://egov.uscis.gov/casestatus/mycasestatus.do"
 
+const {TIMEOUT_NO_BAN} = config
 // const q = queue(function(payload, callback) {
 
 //     const bodyFormData = new FormData()
@@ -44,6 +45,8 @@ function writeMessages(ids, msgs) {
     console.log()
 }
 
+const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 let currentIt = idIterator.next();
 
 (async function main() {
@@ -58,6 +61,7 @@ let currentIt = idIterator.next();
         validMsgs = {}
 
         while(!currentIt.done && counter<10) {
+            await snooze(TIMEOUT_NO_BAN)
             reqAry.push(fetchResult(currentIt.value))
             ids.push(currentIt.value)
 
@@ -67,9 +71,10 @@ let currentIt = idIterator.next();
     
         const htmls = await Promise.all(reqAry)
 
-        console.log(htmls)
+        // console.log(htmls)
 
         for(let html of htmls) {
+            console.log(html)
             const $ = cheerio.load(html)
             if($('label[for=accessviolation]').text()) {
                 console.log($('label[for=accessviolation]').text().trim())
