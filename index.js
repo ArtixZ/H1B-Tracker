@@ -4,7 +4,7 @@ const cheerio = require('cheerio')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 
-const idIterator = require("./idGenerator")()
+let idIterator = require("./idGenerator")
 const config = require("./configuration.json")
 const url = "https://egov.uscis.gov/casestatus/mycasestatus.do"
 
@@ -46,8 +46,10 @@ function fetchResult(id) {
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
-db.defaults({ "cptVT": { records:[], invalidRecords: [], currentIdx: "" } })
+db.defaults({ "cptVT": { records:[], invalidRecords: [], currentIdx: 0 } })
   .write()
+
+const whereILeft = db.get('cptVT').get('currentIdx').value();
 
 function writeMessages(msgObjs) {
     if(Object.keys(msgObjs).length > 0) {
@@ -71,6 +73,7 @@ function writeInvalidKeys(keys) {
 
 const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+idIterator = idIterator(whereILeft)
 let currentIt = idIterator.next();
 
 (async function main() {
@@ -88,11 +91,6 @@ let currentIt = idIterator.next();
         while(!currentIt.done && counter<10) {
             await snooze(TIMEOUT_NO_BAN)
             reqAry.push(fetchResult(currentIt.value))
-            
-            db.get('cptVT')
-            .set('currentIdx', currentIt.value)
-            .write();
-            
             ids.push(currentIt.value)
 
             currentIt = idIterator.next()
@@ -131,6 +129,9 @@ let currentIt = idIterator.next();
             writeInvalidKeys(invalidIds)
         }
         
+        db.get('cptVT')
+        .update('currentIdx', n => n + 10)
+        .write();
 
     }
 })()
