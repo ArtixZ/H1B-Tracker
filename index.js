@@ -46,7 +46,7 @@ function fetchResult(id) {
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
-db.defaults({ "cptVt": { records:[], invalidRecords: [], currentIdx: "" } })
+db.defaults({ "cptVT": { records:[], invalidRecords: [], currentIdx: "" } })
   .write()
 
 function writeMessages(msgObjs) {
@@ -61,7 +61,7 @@ function writeMessages(msgObjs) {
 
 function writeInvalidKeys(keys) {
     if(keys.length > 0) {
-        db.get('cptVt')
+        db.get('cptVT')
         .get('invalidRecords')
         .push(...keys)
         .write()
@@ -89,7 +89,7 @@ let currentIt = idIterator.next();
             await snooze(TIMEOUT_NO_BAN)
             reqAry.push(fetchResult(currentIt.value))
             
-            db.get('cptVt')
+            db.get('cptVT')
             .set('currentIdx', currentIt.value)
 
             ids.push(currentIt.value)
