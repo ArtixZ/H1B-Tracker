@@ -91,7 +91,8 @@ let currentIt = idIterator.next();
             
             db.get('cptVT')
             .set('currentIdx', currentIt.value)
-
+            .write();
+            
             ids.push(currentIt.value)
 
             currentIt = idIterator.next()
