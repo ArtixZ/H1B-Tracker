@@ -1,6 +1,8 @@
 const axios = require("axios")
 const FormData = require('form-data')
 const cheerio = require('cheerio')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
 
 const idIterator = require("./idGenerator")()
 const config = require("./configuration.json")
@@ -41,8 +43,30 @@ function fetchResult(id) {
 
 }
 
-function writeMessages(ids, msgs) {
-    console.log()
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+
+db.defaults({ "cptVt": { records:[], invalidRecords: [], currentIdx: "" } })
+  .write()
+
+function writeMessages(msgObjs) {
+    if(Object.keys(msgObjs).length > 0) {
+        db.get('cptVT')
+        .get('records')
+        .push(...msgObjs)
+        .write()
+    }
+    
+}
+
+function writeInvalidKeys(keys) {
+    if(keys.length > 0) {
+        db.get('cptVt')
+        .get('invalidRecords')
+        .push(...keys)
+        .write()
+    }
+    
 }
 
 const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -58,11 +82,16 @@ let currentIt = idIterator.next();
         counter = 0,
         ids = [],
         msgs = [],
-        validMsgs = {}
+        validMsgs = {},
+        invalidIds = []
 
         while(!currentIt.done && counter<10) {
             await snooze(TIMEOUT_NO_BAN)
             reqAry.push(fetchResult(currentIt.value))
+            
+            db.get('cptVt')
+            .set('currentIdx', currentIt.value)
+
             ids.push(currentIt.value)
 
             currentIt = idIterator.next()
@@ -89,11 +118,18 @@ let currentIt = idIterator.next();
         for(let i=0; i<msgs.length; i++) {
             if(!!msgs[i]) {
                 validMsgs[ids[i]] = msgs[i]
+            } else {
+                invalidIds.push(ids[i])
             }
         }
         if(Object.keys(validMsgs).length) {
             writeMessages(validMsgs)
+            
         }
+        if(invalidIds.length) {
+            writeInvalidKeys(invalidIds)
+        }
+        
 
     }
 })()
