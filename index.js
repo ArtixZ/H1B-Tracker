@@ -8,7 +8,7 @@ let idIterator = require("./idGenerator")
 const config = require("./configuration.json")
 const url = "https://egov.uscis.gov/casestatus/mycasestatus.do"
 
-const {TIMEOUT_NO_BAN} = config
+const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_INTERVAL, SLEEP_PERIOD } = config
 // const q = queue(function(payload, callback) {
 
 //     const bodyFormData = new FormData()
@@ -73,12 +73,25 @@ function writeInvalidKeys(keys) {
 
 const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+let interval
+function startInterval() {
+    interval = setInterval(async function() {
+        console.log("!!!!!!!start sleep!!!!!!!!!!!!!!!!!")
+        await snooze(SLEEP_PERIOD*1000)
+        console.log("!!!!!!!finish sleep!!!!!!!!!!!!!!!!!")
+    }, SLEEP_INTERVAL*1000)
+}
+function cleanInterval() {
+    clearInterval(interval)
+}
+
+
 idIterator = idIterator(whereILeft)
 let currentIt = idIterator.next();
 
 (async function main() {
     let banned = false
-
+    startInterval()
     while(!currentIt.done && !banned) {
         //  const res = await fetchResult(currentIt.value)
         let reqAry = [],
@@ -88,7 +101,7 @@ let currentIt = idIterator.next();
         validMsgs = {},
         invalidIds = []
 
-        while(!currentIt.done && counter<10) {
+        while(!currentIt.done && counter < CONCUR_THREAD) {
             await snooze(TIMEOUT_NO_BAN)
             reqAry.push(fetchResult(currentIt.value))
             ids.push(currentIt.value)
@@ -114,26 +127,36 @@ let currentIt = idIterator.next();
 
         }
 
-        for(let i=0; i<msgs.length; i++) {
-            if(!!msgs[i]) {
-                validMsgs[ids[i]] = msgs[i]
-            } else {
-                invalidIds.push(ids[i])
+        // drop current message stack if banned
+
+        if(!banned) {
+
+            //traverse messages got from website
+            for(let i=0; i<msgs.length; i++) {
+                if(!!msgs[i]) {
+                    validMsgs[ids[i]] = msgs[i]
+                } else {
+                    invalidIds.push(ids[i])
+                }
             }
-        }
-        if(Object.keys(validMsgs).length) {
-            writeMessages(validMsgs)
+
+
+            // write data store it somewhere
+            if(Object.keys(validMsgs).length) {
+                writeMessages(validMsgs)
+            }
+            if(invalidIds.length) {
+                writeInvalidKeys(invalidIds)
+            }
             
-        }
-        if(invalidIds.length) {
-            writeInvalidKeys(invalidIds)
+            db.get('cptVT')
+            .update('currentIdx', n => n + CONCUR_THREAD)
+            .write();
         }
         
-        db.get('cptVT')
-        .update('currentIdx', n => n + 10)
-        .write();
 
     }
+    cleanInterval()
 })()
 
 
@@ -150,7 +173,7 @@ let currentIt = idIterator.next();
 //     let currentIt = idIterator.next()
 //     let counter = 0
     
-//     while(counter < 10 && !currentIt.done) {
+//     while(counter < CONCUR_THREAD && !currentIt.done) {
 
 //         const bodyFormData = new FormData()
 //         bodyFormData.append('appReceiptNum', id)
