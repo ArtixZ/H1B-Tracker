@@ -74,15 +74,24 @@ function writeInvalidKeys(keys) {
 const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 let interval
+
 function startInterval() {
     interval = setInterval(async function() {
         console.log("!!!!!!!start sleep!!!!!!!!!!!!!!!!!")
-        await snooze(SLEEP_PERIOD*1000)
+        // await snooze(SLEEP_PERIOD*1000)
+        sleepThread(SLEEP_PERIOD)
         console.log("!!!!!!!finish sleep!!!!!!!!!!!!!!!!!")
     }, SLEEP_INTERVAL*1000)
 }
 function cleanInterval() {
     clearInterval(interval)
+}
+
+function msleep(n) {
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, n);
+  }
+function sleepThread(n) {
+msleep(n*1000);
 }
 
 
@@ -91,9 +100,11 @@ let currentIt = idIterator.next();
 
 (async function main() {
     let banned = false
+
     startInterval()
+
     while(!currentIt.done && !banned) {
-        //  const res = await fetchResult(currentIt.value)
+        //  const res = await fetchResult(stringID)
         let reqAry = [],
         counter = 0,
         ids = [],
@@ -103,8 +114,9 @@ let currentIt = idIterator.next();
 
         while(!currentIt.done && counter < CONCUR_THREAD) {
             await snooze(TIMEOUT_NO_BAN)
-            reqAry.push(fetchResult(currentIt.value))
-            ids.push(currentIt.value)
+            const { stringID } = currentIt.value
+            reqAry.push(fetchResult(stringID))
+            ids.push(stringID)
 
             currentIt = idIterator.next()
             counter ++
@@ -156,7 +168,9 @@ let currentIt = idIterator.next();
         
 
     }
+
     cleanInterval()
+
 })()
 
 
