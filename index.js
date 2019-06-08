@@ -52,6 +52,7 @@ db.defaults({ "cptVT": { records:[], invalidRecords: [], currentIdx: 0 } })
 const whereILeft = db.get('cptVT').get('currentIdx').value();
 
 function writeMessages(msgObjs) {
+    console.log(msgObjs)
     if(Object.keys(msgObjs).length > 0) {
         db.get('cptVT')
         .get('records')
@@ -62,6 +63,7 @@ function writeMessages(msgObjs) {
 }
 
 function writeInvalidKeys(keys) {
+    console.log(keys)
     if(keys.length > 0) {
         db.get('cptVT')
         .get('invalidRecords')
@@ -127,7 +129,7 @@ let currentIt = idIterator.next();
         // console.log(htmls)
 
         for(let html of htmls) {
-            console.log(html)
+            // console.log(html)
             const $ = cheerio.load(html)
             if($('label[for=accessviolation]').text()) {
                 console.log($('label[for=accessviolation]').text().trim())
