@@ -44,10 +44,15 @@ function* idGenerator2(start = 0) {
 		idx2 = 0,
 		skipTo;
 
-	if (start) {
+	if (start && typeof start == 'string') {
 		(idx1 = Number(start.slice(prefix.length, prefix.length + rangeDigits))),
 			(idx2 = Number(start.slice(prefix.length + rangeDigits))),
 			(skipTo = 0);
+	} else if (start && typeof start == 'number') {
+		const divisor = Number('1' + '0'.repeat(exampleSurfix.length - rangeDigits));
+		idx1 = Math.floor(start / divisor);
+		idx2 = start % divisor;
+		skipTo = 0;
 	}
 	const range1 = Number('1' + '0'.repeat(rangeDigits)),
 		range2 = Number('1' + '0'.repeat(exampleSurfix.length - rangeDigits));

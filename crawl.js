@@ -92,16 +92,17 @@ function sleepThread(n) {
 
 	while (!currentIt.done && !banned) {
 		//  const res = await fetchResult(stringID)
-		let reqAry = [],
-			ids = [],
-			msgs = [],
-			validMsgs = {},
-			invalidIds = [];
 
 		let subIdIterator = currentIt.value(),
 			subIt = subIdIterator.next();
 		while (!subIt.done && !banned) {
-			let counter = 0;
+			let counter = 0,
+				invalidIds = [],
+				ids = [],
+				reqAry = [],
+				msgs = [],
+				validMsgs = {};
+
 			while (counter < CONCUR_THREAD) {
 				await snooze(TIMEOUT_NO_BAN);
 				const { stringID } = subIt.value;
