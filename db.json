@@ -1,0 +1,12 @@
+{
+  "cptVT": {
+    "records": [],
+    "invalidRecords": [
+      "000xxxx",
+      "000xxxx",
+      "000xxxx",
+      "001xxxx"
+    ],
+    "currentIdx": "EAC1910020359"
+  }
+}

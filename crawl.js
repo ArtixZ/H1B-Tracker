@@ -44,9 +44,10 @@ function fetchResult(id) {
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
-db.defaults({ cptVT: { records: [], invalidRecords: [], currentIdx: 0 } }).write();
+db.defaults({ cptVT: { records: [], invalidRecords: [], currentIdx: 0, foundOne: false } }).write();
 
 const whereILeft = db.get('cptVT').get('currentIdx').value();
+const didIFoundOne = db.get('cptVT').get('foundOne').value();
 
 function writeMessages(msgObjs) {
 	if (Object.keys(msgObjs).length > 0) {
@@ -90,22 +91,35 @@ function sleepThread(n) {
 	let currentIt = idIterator.next();
 	startInterval();
 
+	let foundOne = didIFoundOne,
+		subIt;
 	while (!currentIt.done && !banned) {
 		//  const res = await fetchResult(stringID)
 
-		let subIdIterator = currentIt.value(),
-			subIt = subIdIterator.next();
-		while (!subIt.done && !banned) {
+		if (foundOne && invalidIds) {
+			writeInvalidKeys(invalidIds);
+		} else if (!foundOne && subIt && subIt.value.percentage >= 0.05) {
+			writeInvalidKeys([ subIt.value.range ]);
+		}
+
+		db.get('cptVT').set('foundOne', foundOne).write();
+
+		let subIdIterator = currentIt.value();
+		subIt = subIdIterator.next();
+
+		let invalidIds = [];
+
+		while (!subIt.done && !banned && (foundOne || subIt.value.percentage < 0.05)) {
 			let counter = 0,
-				invalidIds = [],
 				ids = [],
 				reqAry = [],
 				msgs = [],
-				validMsgs = {};
+				validMsgs = {},
+				stringID;
 
 			while (counter < CONCUR_THREAD) {
 				await snooze(TIMEOUT_NO_BAN);
-				const { stringID } = subIt.value;
+				stringID = subIt.value.stringID;
 				reqAry.push(fetchResult(stringID));
 				ids.push(stringID);
 
@@ -120,10 +134,10 @@ function sleepThread(n) {
 				console.log(err);
 			}
 
-			// console.log(htmls)
+			console.log(htmls);
 
 			for (let html of htmls) {
-				console.log(html);
+				// console.log(html);
 				const $ = cheerio.load(html);
 				if ($('label[for=accessviolation]').text()) {
 					console.log($('label[for=accessviolation]').text().trim());
@@ -143,6 +157,8 @@ function sleepThread(n) {
 				for (let i = 0; i < msgs.length; i++) {
 					if (!!msgs[i]) {
 						validMsgs[ids[i]] = msgs[i];
+						foundOne = true;
+						db.get('cptVT').set('foundOne', true).write();
 					} else {
 						invalidIds.push(ids[i]);
 					}
@@ -152,11 +168,11 @@ function sleepThread(n) {
 				if (Object.keys(validMsgs).length) {
 					writeMessages(validMsgs);
 				}
-				if (invalidIds.length) {
-					writeInvalidKeys(invalidIds);
-				}
+				// if (invalidIds.length) {
+				// 	writeInvalidKeys(invalidIds);
+				// }
 
-				db.get('cptVT').update('currentIdx', (n) => n + CONCUR_THREAD).write();
+				db.get('cptVT').set('currentIdx', stringID).write();
 			}
 		}
 

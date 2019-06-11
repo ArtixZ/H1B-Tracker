@@ -63,7 +63,11 @@ function* idGenerator2(start = 0) {
 		skipTo = yield function* subIdGenerator() {
 			while (idx2 < range2) {
 				const str2 = String(idx2).padStart(exampleSurfix.length - rangeDigits, '0');
-				yield { stringID: prefix + str1 + str2, percentage: idx2 / range2 };
+				yield {
+					stringID: prefix + str1 + str2,
+					percentage: idx2 / range2,
+					range: str1.padEnd(exampleSurfix.length, 'x')
+				};
 				idx2++;
 			}
 		};
