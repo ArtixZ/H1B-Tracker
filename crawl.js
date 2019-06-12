@@ -8,7 +8,7 @@ let idIterator = require('./idGenerator');
 const config = require('./configuration.json');
 const url = 'https://egov.uscis.gov/casestatus/mycasestatus.do';
 
-const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_INTERVAL, SLEEP_PERIOD } = config;
+const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_INTERVAL, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT } = config;
 // const q = queue(function(payload, callback) {
 
 //     const bodyFormData = new FormData()
@@ -84,12 +84,22 @@ function sleepThread(n) {
 	msleep(n * 1000);
 }
 
+let requestCount = 0;
+
+function startSleep() {
+	console.log('!!!!!!!start sleep!!!!!!!!!!!!!!!!!');
+	// await snooze(SLEEP_PERIOD*1000)
+	sleepThread(SLEEP_PERIOD);
+	console.log('!!!!!!!finish sleep!!!!!!!!!!!!!!!!!');
+	requestCount = 0;
+}
+
 (async function main() {
 	let banned = false;
 
 	idIterator = idIterator(whereILeft);
 	let currentIt = idIterator.next();
-	startInterval();
+	// startInterval();
 
 	let foundOne = didIFoundOne,
 		subIt;
@@ -121,6 +131,7 @@ function sleepThread(n) {
 				await snooze(TIMEOUT_NO_BAN);
 				stringID = subIt.value.stringID;
 				reqAry.push(fetchResult(stringID));
+				requestCount++;
 				ids.push(stringID);
 
 				subIt = subIdIterator.next();
@@ -130,11 +141,15 @@ function sleepThread(n) {
 			let htmls = [];
 			try {
 				htmls = await Promise.all(reqAry);
+				if (requestCount >= SLEEP_INTERVAL_REQUEST_COUNT) {
+					startSleep();
+				}
 			} catch (err) {
+				console.log('!!!!!!! ERROR !!!!!!those are the ids: ', ids);
 				console.log(err);
 			}
-
-			console.log(htmls);
+			// console.log(ids);
+			// console.log(htmls);
 
 			for (let html of htmls) {
 				// console.log(html);
@@ -161,6 +176,7 @@ function sleepThread(n) {
 						db.get('cptVT').set('foundOne', true).write();
 					} else {
 						invalidIds.push(ids[i]);
+						console.log('==== INVALID IDs ====   ', ids[i]);
 					}
 				}
 
@@ -181,7 +197,7 @@ function sleepThread(n) {
 		}
 	}
 
-	cleanInterval();
+	// cleanInterval();
 })();
 
 // for(let id of idIterator) {
