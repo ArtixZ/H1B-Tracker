@@ -1,32 +1,9 @@
 {
-  "cptVT": {
-    "records": [],
-    "invalidRecords": [
-      "000xxxx",
-      "000xxxx",
-      "000xxxx",
-      "001xxxx",
-      "002xxxx",
-      "003xxxx",
-      "004xxxx",
-      "005xxxx",
-      "006xxxx",
-      "007xxxx",
-      "008xxxx",
-      "009xxxx",
-      "010xxxx",
-      "011xxxx",
-      "012xxxx",
-      "013xxxx",
-      "014xxxx",
-      "015xxxx",
-      "016xxxx",
-      "017xxxx",
-      "018xxxx",
-      "019xxxx",
-      "020xxxx",
-      "021xxxx"
-    ],
-    "currentIdx": "EAC1915000000"
-  }
+	"_comment": "timeout(ms)  concur thread(number) sleep interval(s) sleep period(s) --- SLEEP_INTERVAL>SLEEP_PERIOD !!",
+
+	"TIMEOUT_NO_BAN": 500,
+	"CONCUR_THREAD": 20,
+	"SLEEP_INTERVAL": 600,
+	"SLEEP_INTERVAL_REQUEST_COUNT": 600,
+	"SLEEP_PERIOD": 300
 }
