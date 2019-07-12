@@ -44,10 +44,15 @@ function* idGenerator2(start = 0) {
 		idx2 = 0,
 		skipTo;
 
-	if (start) {
+	if (start && typeof start == 'string') {
 		(idx1 = Number(start.slice(prefix.length, prefix.length + rangeDigits))),
 			(idx2 = Number(start.slice(prefix.length + rangeDigits))),
 			(skipTo = 0);
+	} else if (start && typeof start == 'number') {
+		const divisor = Number('1' + '0'.repeat(exampleSurfix.length - rangeDigits));
+		idx1 = Math.floor(start / divisor);
+		idx2 = start % divisor;
+		skipTo = 0;
 	}
 	const range1 = Number('1' + '0'.repeat(rangeDigits)),
 		range2 = Number('1' + '0'.repeat(exampleSurfix.length - rangeDigits));
@@ -58,7 +63,11 @@ function* idGenerator2(start = 0) {
 		skipTo = yield function* subIdGenerator() {
 			while (idx2 < range2) {
 				const str2 = String(idx2).padStart(exampleSurfix.length - rangeDigits, '0');
-				yield { stringID: prefix + str1 + str2, percentage: idx2 / range2 };
+				yield {
+					stringID: prefix + str1 + str2,
+					percentage: idx2 / range2,
+					range: str1.padEnd(exampleSurfix.length, 'x')
+				};
 				idx2++;
 			}
 		};

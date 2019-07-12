@@ -8,7 +8,7 @@ let idIterator = require('./idGenerator');
 const config = require('./configuration.json');
 const url = 'https://egov.uscis.gov/casestatus/mycasestatus.do';
 
-const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_INTERVAL, SLEEP_PERIOD } = config;
+const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_INTERVAL, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT } = config;
 // const q = queue(function(payload, callback) {
 
 //     const bodyFormData = new FormData()
@@ -44,9 +44,10 @@ function fetchResult(id) {
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
-db.defaults({ cptVT: { records: [], invalidRecords: [], currentIdx: 0 } }).write();
+db.defaults({ cptVT: { records: [], invalidRecords: [], currentIdx: 0, foundOne: false } }).write();
 
 const whereILeft = db.get('cptVT').get('currentIdx').value();
+const didIFoundOne = db.get('cptVT').get('foundOne').value();
 
 function writeMessages(msgObjs) {
 	if (Object.keys(msgObjs).length > 0) {
@@ -83,29 +84,54 @@ function sleepThread(n) {
 	msleep(n * 1000);
 }
 
+let requestCount = 0;
+
+function startSleep() {
+	console.log('!!!!!!!start sleep!!!!!!!!!!!!!!!!!');
+	// await snooze(SLEEP_PERIOD*1000)
+	sleepThread(SLEEP_PERIOD);
+	console.log('!!!!!!!finish sleep!!!!!!!!!!!!!!!!!');
+	requestCount = 0;
+}
+
 (async function main() {
 	let banned = false;
 
 	idIterator = idIterator(whereILeft);
 	let currentIt = idIterator.next();
-	startInterval();
+	// startInterval();
 
+	let foundOne = didIFoundOne,
+		subIt;
 	while (!currentIt.done && !banned) {
 		//  const res = await fetchResult(stringID)
-		let reqAry = [],
-			ids = [],
-			msgs = [],
-			validMsgs = {},
-			invalidIds = [];
 
-		let subIdIterator = currentIt.value(),
-			subIt = subIdIterator.next();
-		while (!subIt.done && !banned) {
-			let counter = 0;
+		if (foundOne && invalidIds) {
+			writeInvalidKeys(invalidIds);
+		} else if (!foundOne && subIt && subIt.value.percentage >= 0.05) {
+			writeInvalidKeys([ subIt.value.range ]);
+		}
+
+		db.get('cptVT').set('foundOne', foundOne).write();
+
+		let subIdIterator = currentIt.value();
+		subIt = subIdIterator.next();
+
+		let invalidIds = [];
+
+		while (!subIt.done && !banned && (foundOne || subIt.value.percentage < 0.05)) {
+			let counter = 0,
+				ids = [],
+				reqAry = [],
+				msgs = [],
+				validMsgs = {},
+				stringID;
+
 			while (counter < CONCUR_THREAD) {
 				await snooze(TIMEOUT_NO_BAN);
-				const { stringID } = subIt.value;
+				stringID = subIt.value.stringID;
 				reqAry.push(fetchResult(stringID));
+				requestCount++;
 				ids.push(stringID);
 
 				subIt = subIdIterator.next();
@@ -115,14 +141,18 @@ function sleepThread(n) {
 			let htmls = [];
 			try {
 				htmls = await Promise.all(reqAry);
+				if (requestCount >= SLEEP_INTERVAL_REQUEST_COUNT) {
+					startSleep();
+				}
 			} catch (err) {
+				console.log('!!!!!!! ERROR !!!!!!those are the ids: ', ids);
 				console.log(err);
 			}
-
-			// console.log(htmls)
+			// console.log(ids);
+			// console.log(htmls);
 
 			for (let html of htmls) {
-				console.log(html);
+				// console.log(html);
 				const $ = cheerio.load(html);
 				if ($('label[for=accessviolation]').text()) {
 					console.log($('label[for=accessviolation]').text().trim());
@@ -142,8 +172,11 @@ function sleepThread(n) {
 				for (let i = 0; i < msgs.length; i++) {
 					if (!!msgs[i]) {
 						validMsgs[ids[i]] = msgs[i];
+						foundOne = true;
+						db.get('cptVT').set('foundOne', true).write();
 					} else {
 						invalidIds.push(ids[i]);
+						console.log('==== INVALID IDs ====   ', ids[i]);
 					}
 				}
 
@@ -151,11 +184,11 @@ function sleepThread(n) {
 				if (Object.keys(validMsgs).length) {
 					writeMessages(validMsgs);
 				}
-				if (invalidIds.length) {
-					writeInvalidKeys(invalidIds);
-				}
+				// if (invalidIds.length) {
+				// 	writeInvalidKeys(invalidIds);
+				// }
 
-				db.get('cptVT').update('currentIdx', (n) => n + CONCUR_THREAD).write();
+				db.get('cptVT').set('currentIdx', stringID).write();
 			}
 		}
 
@@ -164,7 +197,7 @@ function sleepThread(n) {
 		}
 	}
 
-	cleanInterval();
+	// cleanInterval();
 })();
 
 // for(let id of idIterator) {
