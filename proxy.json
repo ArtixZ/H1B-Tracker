@@ -1,0 +1,8 @@
+{
+	"_comment": "configure your proxy here. Prefer rotate proxy server",
+
+	"PROXY_IP": "",
+	"PORT": "",
+	"USERNAME": "",
+	"PASSWORD": ""
+}

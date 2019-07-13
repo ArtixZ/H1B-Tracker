@@ -6,9 +6,13 @@ const FileSync = require('lowdb/adapters/FileSync');
 
 let idIterator = require('./idGenerator');
 const config = require('./configuration.json');
+const proxyConfig = require('./proxy.json');
+
 const url = 'https://egov.uscis.gov/casestatus/mycasestatus.do';
 
 const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_INTERVAL, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT } = config;
+const { PROXY_IP, PORT, USERNAME, PASSWORD } = proxyConfig;
+
 // const q = queue(function(payload, callback) {
 
 //     const bodyFormData = new FormData()
@@ -32,6 +36,35 @@ function fetchResult(id) {
 	const bodyFormData = new FormData();
 	bodyFormData.append('appReceiptNum', id);
 	bodyFormData.append('caseStatusSearchBtn', 'CHECK+STATUS');
+
+	if(PROXY_IP && PORT) {
+		if(USERNAME && PASSWORD) {
+			return axios({
+				method: 'POST',
+				url: url,
+				proxy: {
+					host: PROXY_IP,
+					port: PORT,
+					auth: {
+					  username: USERNAME,
+					  password: PASSWORD
+					}
+				},
+				data: bodyFormData,
+				config: { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+			}).then((res) => res.data || null);
+		}
+		return axios({
+			method: 'POST',
+			url: url,
+			proxy: {
+				host: PROXY_IP,
+				port: PORT,
+			},
+			data: bodyFormData,
+			config: { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+		}).then((res) => res.data || null);
+	}
 
 	return axios({
 		method: 'POST',

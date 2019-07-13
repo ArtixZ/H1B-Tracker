@@ -8,15 +8,8 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Another node",
+            "name": "crawl.js",
             "program": "${workspaceFolder}/crawl.js"
-        },
-
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/index.js"
         }
     ]
 }
