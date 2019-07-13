@@ -1,0 +1,8 @@
+{
+	"_comment": "timeout(ms)  concur thread(number) sleep interval(s) sleep period(s) --- SLEEP_INTERVAL>=SLEEP_PERIOD !!",
+
+	"PROXY_IP": "",
+	"PORT": "",
+	"USERNAME": "",
+	"PASSWORD": ""
+}
