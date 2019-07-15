@@ -10,6 +10,12 @@
             "request": "launch",
             "name": "crawl.js",
             "program": "${workspaceFolder}/crawl.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "test.js",
+            "program": "${workspaceFolder}/test.js"
         }
     ]
 }
