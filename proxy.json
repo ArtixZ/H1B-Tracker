@@ -1,5 +1,5 @@
 {
-	"_comment": "timeout(ms)  concur thread(number) sleep interval(s) sleep period(s) --- SLEEP_INTERVAL>=SLEEP_PERIOD !!",
+	"_comment": "set up your proxy server configs",
 
 	"PROXY_IP": "",
 	"PORT": "",
