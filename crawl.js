@@ -2,6 +2,7 @@ const axios = require('axios');
 const FormData = require('form-data');
 const cheerio = require('cheerio');
 const low = require('lowdb');
+const ProxyAgent = require('proxy-agent');
 const FileSync = require('lowdb/adapters/FileSync');
 
 let idIterator = require('./idGenerator');
@@ -42,27 +43,17 @@ function fetchResult(id) {
 			return axios({
 				method: 'POST',
 				url: url,
-				proxy: {
-					host: PROXY_IP,
-					port: PORT,
-					auth: {
-					  username: USERNAME,
-					  password: PASSWORD
-					}
-				},
 				data: bodyFormData,
-				config: { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+				agent: new ProxyAgent(`https://${USERNAME}:${PASSWORD}@${PROXY_IP}:${PORT}`),
+				headers: bodyFormData.getHeaders()
 			}).then((res) => res.data || null);
 		}
 		return axios({
 			method: 'POST',
 			url: url,
-			proxy: {
-				host: PROXY_IP,
-				port: PORT,
-			},
 			data: bodyFormData,
-			config: { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+			agent: new ProxyAgent(`https://${PROXY_IP}:${PORT}`),
+			headers: bodyFormData.getHeaders()
 		}).then((res) => res.data || null);
 	}
 
@@ -70,7 +61,7 @@ function fetchResult(id) {
 		method: 'POST',
 		url: url,
 		data: bodyFormData,
-		config: { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+		headers: bodyFormData.getHeaders()
 	}).then((res) => res.data || null);
 }
 
@@ -83,8 +74,11 @@ const whereILeft = db.get('cptVT').get('currentIdx').value();
 const didIFoundOne = db.get('cptVT').get('foundOne').value();
 
 function writeMessages(msgObjs) {
-	if (Object.keys(msgObjs).length > 0) {
-		db.get('cptVT').get('records').push(...msgObjs).write();
+	const ids = Object.keys(msgObjs);
+	if (ids.length > 0) {
+		for(let id of ids) {
+			db.get('cptVT').get('records').push({id, message: msgObjs[id]}).write();
+		}
 	}
 }
 
@@ -138,6 +132,7 @@ function startSleep() {
 		subIt;
 	while (!currentIt.done && !banned) {
 		//  const res = await fetchResult(stringID)
+		let invalidIds
 
 		if (foundOne && invalidIds) {
 			writeInvalidKeys(invalidIds);
@@ -150,7 +145,7 @@ function startSleep() {
 		let subIdIterator = currentIt.value();
 		subIt = subIdIterator.next();
 
-		let invalidIds = [];
+		invalidIds = [];
 
 		while (!subIt.done && !banned && (foundOne || subIt.value.percentage < 0.05)) {
 			let counter = 0,
