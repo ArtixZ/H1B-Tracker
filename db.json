@@ -1,6 +1,2383 @@
 {
   "cptVT": {
-    "records": [],
+    "records": [
+      {
+        "id": "EAC1915150006",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150007",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150008",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150009",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150011",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150017",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150018",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150019",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150020",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150021",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150022",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150023",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150024",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150025",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150026",
+        "message": "Case Was Rejected Because It Was Improperly Filed"
+      },
+      {
+        "id": "EAC1915150029",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150030",
+        "message": "Case Was Updated To Show All Fingerprints Were Taken And Case Is In Process"
+      },
+      {
+        "id": "EAC1915150031",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150032",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150033",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150035",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150036",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150037",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150038",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150039",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150040",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150042",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150043",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150044",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150045",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150047",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150048",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150050",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150051",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150052",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150053",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150054",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150055",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150056",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150057",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150058",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150059",
+        "message": "Notice Was Returned To USCIS Because The Post Office Could Not Deliver It"
+      },
+      {
+        "id": "EAC1915150061",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150062",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150063",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150064",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150066",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150067",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150068",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150069",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150070",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150072",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150073",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150074",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150075",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150076",
+        "message": "Decision Notice Mailed"
+      },
+      {
+        "id": "EAC1915150077",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150078",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150079",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150080",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150081",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150083",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150084",
+        "message": "Notice Was Returned To USCIS Because The Post Office Could Not Deliver It"
+      },
+      {
+        "id": "EAC1915150085",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150086",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150087",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150088",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150090",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150091",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150092",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150093",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150094",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150095",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150096",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150097",
+        "message": "Withdrawal Acknowledgement Notice Was Sent"
+      },
+      {
+        "id": "EAC1915150099",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150100",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150101",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150102",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150103",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150104",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150105",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150106",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150107",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150108",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150109",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150110",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150111",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150112",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150113",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150114",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150115",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150117",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150118",
+        "message": "Date of Birth Was Updated"
+      },
+      {
+        "id": "EAC1915150119",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150122",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150123",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150124",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150125",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150126",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150127",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150128",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150129",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150130",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150131",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150132",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150133",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150134",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150135",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150136",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150137",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150138",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150139",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150140",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150141",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150142",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150143",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150144",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150145",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150146",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150147",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150148",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150149",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150150",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150151",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150153",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150154",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150156",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150157",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150158",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150159",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150160",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150161",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150162",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150163",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150164",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150165",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150166",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150167",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150169",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150170",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150171",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150172",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150173",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150174",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150175",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150176",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150178",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150179",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150180",
+        "message": "Decision Notice Mailed"
+      },
+      {
+        "id": "EAC1915150181",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150182",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150183",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150184",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150185",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150186",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150188",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150189",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150190",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150192",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150193",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150194",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150195",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150197",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150198",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150199",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150200",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150201",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150202",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150203",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150204",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150205",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150206",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150207",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150208",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150209",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150210",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150211",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150212",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150213",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150215",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150216",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150217",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150219",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150220",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150221",
+        "message": "Name Was Updated"
+      },
+      {
+        "id": "EAC1915150222",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150224",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150225",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150226",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150227",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150228",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150229",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150230",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150231",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150233",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150234",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150235",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150236",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150237",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150239",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150240",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150241",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150242",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150243",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150244",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150245",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150246",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150247",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150249",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150250",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150251",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150252",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150253",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150255",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150256",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150257",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150258",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150261",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150262",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150263",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150264",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150265",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150267",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150268",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150269",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150270",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150271",
+        "message": "Notice Was Returned To USCIS Because The Post Office Could Not Deliver It"
+      },
+      {
+        "id": "EAC1915150274",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150275",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150276",
+        "message": "Case Was Updated To Show All Fingerprints Were Taken And Case Is In Process"
+      },
+      {
+        "id": "EAC1915150277",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150278",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150279",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150280",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150281",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150283",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150284",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150285",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150286",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150287",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150288",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150289",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150291",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150293",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150294",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150295",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150296",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150297",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150298",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150299",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150300",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150302",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150303",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150304",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150305",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150306",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150307",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150308",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150309",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150310",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150313",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150315",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150316",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150317",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150318",
+        "message": "Fingerprint Review Was Completed"
+      },
+      {
+        "id": "EAC1915150320",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150322",
+        "message": "Name Was Updated"
+      },
+      {
+        "id": "EAC1915150323",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150325",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150326",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150327",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150329",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150330",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150331",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150333",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150335",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150336",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150337",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150339",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150340",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150341",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150342",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150343",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150344",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150346",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150347",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150348",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150349",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150350",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150351",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150352",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150353",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150354",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150357",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150358",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150359",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150360",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150361",
+        "message": "Name Was Updated"
+      },
+      {
+        "id": "EAC1915150363",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150364",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150365",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150366",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150368",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150369",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150370",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150371",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150373",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150374",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150376",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150377",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150378",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150379",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150380",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150382",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150383",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150384",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150385",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150388",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150389",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150390",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150391",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150392",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150393",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150394",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150395",
+        "message": "Decision Notice Mailed"
+      },
+      {
+        "id": "EAC1915150397",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150398",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150399",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150400",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150402",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150404",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150405",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150406",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150407",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150409",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150410",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150412",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150413",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150414",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150415",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150416",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150417",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150419",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150421",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150422",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150423",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150424",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150425",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150426",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150428",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150429",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150430",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150432",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150434",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150435",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150437",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150438",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150439",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150441",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150442",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150443",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150444",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150445",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150448",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150449",
+        "message": "Decision Notice Mailed"
+      },
+      {
+        "id": "EAC1915150450",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150451",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150452",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150453",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150454",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150455",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150456",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150457",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150459",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150469",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150470",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150472",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150474",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150475",
+        "message": "Response To USCIS' Request For Evidence Was Received"
+      },
+      {
+        "id": "EAC1915150476",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150477",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150478",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150479",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150480",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150481",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150482",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150483",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150484",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150485",
+        "message": "Decision Notice Mailed"
+      },
+      {
+        "id": "EAC1915150486",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150487",
+        "message": "Case Was Transferred And A New Office Has Jurisdiction"
+      },
+      {
+        "id": "EAC1915150491",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150493",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150495",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150496",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150497",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150498",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150500",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150502",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150503",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150504",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150505",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150506",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150507",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150508",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150509",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150510",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150511",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150512",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150516",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150520",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150521",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150522",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150523",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150524",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150525",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150526",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150527",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150528",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150531",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150532",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150533",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150538",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150540",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150541",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150542",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150543",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150544",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150545",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150546",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150547",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150548",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150549",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150550",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150551",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150552",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150555",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150556",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150557",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150558",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150559",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150560",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150562",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150563",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150564",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150565",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150566",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150567",
+        "message": "Case Rejected Because I Sent An Incorrect Fee"
+      },
+      {
+        "id": "EAC1915150568",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150569",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150570",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150572",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150573",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150574",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150575",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150577",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150578",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150579",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150580",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150581",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150582",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150583",
+        "message": "Notice Was Returned To USCIS Because The Post Office Could Not Deliver It"
+      },
+      {
+        "id": "EAC1915150584",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150585",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150586",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150587",
+        "message": "Fingerprint Review Was Completed"
+      },
+      {
+        "id": "EAC1915150591",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150592",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150593",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150594",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150595",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150596",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150597",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150598",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150599",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150600",
+        "message": "Fingerprint Review Was Completed"
+      },
+      {
+        "id": "EAC1915150606",
+        "message": "Withdrawal Acknowledgement Notice Was Sent"
+      },
+      {
+        "id": "EAC1915150607",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150611",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150612",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150613",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150615",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150616",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150617",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150618",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150620",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150621",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150622",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150623",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150624",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150625",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150626",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150627",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150628",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150629",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150630",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150631",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150632",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150633",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150634",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150635",
+        "message": "Case Was Updated To Show All Fingerprints Were Taken And Case Is In Process"
+      },
+      {
+        "id": "EAC1915150636",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150637",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150638",
+        "message": "Case Was Transferred And A New Office Has Jurisdiction"
+      },
+      {
+        "id": "EAC1915150639",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150640",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150641",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150642",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150643",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150644",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150645",
+        "message": "Case Was Updated To Show All Fingerprints Were Taken And Case Is In Process"
+      },
+      {
+        "id": "EAC1915150646",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150647",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150648",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150649",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150650",
+        "message": "Fingerprint Review Was Completed"
+      },
+      {
+        "id": "EAC1915150651",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150652",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150653",
+        "message": "Case Was Received and A Receipt Notice Was Emailed"
+      },
+      {
+        "id": "EAC1915150654",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150655",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150656",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150657",
+        "message": "Case Was Updated To Show All Fingerprints Were Taken And Case Is In Process"
+      },
+      {
+        "id": "EAC1915150658",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150659",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150660",
+        "message": "Fingerprint Review Was Completed"
+      },
+      {
+        "id": "EAC1915150661",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150662",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150663",
+        "message": "Case Was Transferred And A New Office Has Jurisdiction"
+      },
+      {
+        "id": "EAC1915150664",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150665",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150666",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150667",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150668",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150669",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150670",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150671",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150672",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150673",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150674",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150675",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150677",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150678",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150679",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150680",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150681",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150682",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150683",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150684",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150685",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150686",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150687",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150688",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150689",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150690",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150691",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150692",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150693",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150694",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150695",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150696",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150697",
+        "message": "Correspondence Was Received And USCIS Is Reviewing It"
+      },
+      {
+        "id": "EAC1915150698",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150699",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150700",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150701",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150704",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150709",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150712",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150714",
+        "message": "Case Was Updated To Show All Fingerprints Were Taken And Case Is In Process"
+      },
+      {
+        "id": "EAC1915150715",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150716",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150717",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150718",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150719",
+        "message": "Card Was Delivered To Me By The Post Office"
+      },
+      {
+        "id": "EAC1915150720",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150721",
+        "message": "Case Transferred To Another Office"
+      },
+      {
+        "id": "EAC1915150722",
+        "message": "Case Was Received"
+      },
+      {
+        "id": "EAC1915150723",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150724",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150725",
+        "message": "Fees Were Waived"
+      },
+      {
+        "id": "EAC1915150726",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150727",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150728",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150729",
+        "message": "Card Was Mailed To Me"
+      },
+      {
+        "id": "EAC1915150730",
+        "message": "Correspondence Was Received And USCIS Is Reviewing It"
+      },
+      {
+        "id": "EAC1915150731",
+        "message": "Request for Additional Evidence Was Sent"
+      },
+      {
+        "id": "EAC1915150732",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150733",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150734",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150736",
+        "message": "Case Was Approved"
+      },
+      {
+        "id": "EAC1915150738",
+        "message": "Case Was Approved And My Decision Was Emailed"
+      },
+      {
+        "id": "EAC1915150739",
+        "message": "Request for Additional Evidence Was Sent"
+      }
+    ],
     "invalidRecords": [
       "000xxxx",
       "000xxxx",
@@ -39,8 +2416,10 @@
       "510xxxx",
       "511xxxx",
       "512xxxx",
-      "513xxxx"
+      "513xxxx",
+      "514xxxx"
     ],
-    "currentIdx": "EAC1915140279"
+    "currentIdx": "EAC1915150739",
+    "foundOne": true
   }
 }
