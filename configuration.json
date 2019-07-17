@@ -1,9 +1,8 @@
 {
-	"_comment": "timeout(ms)  concur thread(number) sleep interval(s) sleep period(s) --- SLEEP_INTERVAL>=SLEEP_PERIOD !!",
+	"_comment": "TIMEOUT_NO_BAN(ms)  CONCUR_THREAD(number) SLEEP_INTERVAL_REQUEST_COUNT(number) SLEEP_PERIOD(s) ||| SLEEP_INTERVAL>=SLEEP_PERIOD !!",
 
 	"TIMEOUT_NO_BAN": 500,
 	"CONCUR_THREAD": 20,
-	"SLEEP_INTERVAL": 600,
-	"SLEEP_INTERVAL_REQUEST_COUNT": 600,
+	"SLEEP_INTERVAL_REQUEST_COUNT": 120,
 	"SLEEP_PERIOD": 600
 }

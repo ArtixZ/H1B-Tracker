@@ -11,7 +11,7 @@ const proxyConfig = require('./proxy.json');
 
 const url = 'https://egov.uscis.gov/casestatus/mycasestatus.do';
 
-const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_INTERVAL, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT } = config;
+const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT } = config;
 const { PROXY_IP, PORT, USERNAME, PASSWORD } = proxyConfig;
 
 // const q = queue(function(payload, callback) {
@@ -92,17 +92,17 @@ const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let interval;
 
-function startInterval() {
-	interval = setInterval(async function() {
-		console.log('!!!!!!!start sleep!!!!!!!!!!!!!!!!!');
-		// await snooze(SLEEP_PERIOD*1000)
-		sleepThread(SLEEP_PERIOD);
-		console.log('!!!!!!!finish sleep!!!!!!!!!!!!!!!!!');
-	}, SLEEP_INTERVAL * 1000);
-}
-function cleanInterval() {
-	clearInterval(interval);
-}
+// function startInterval() {
+// 	interval = setInterval(async function() {
+// 		console.log('!!!!!!!start sleep!!!!!!!!!!!!!!!!!');
+// 		// await snooze(SLEEP_PERIOD*1000)
+// 		sleepThread(SLEEP_PERIOD);
+// 		console.log('!!!!!!!finish sleep!!!!!!!!!!!!!!!!!');
+// 	}, SLEEP_INTERVAL * 1000);
+// }
+// function cleanInterval() {
+// 	clearInterval(interval);
+// }
 
 function msleep(n) {
 	Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, n);
