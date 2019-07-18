@@ -12,7 +12,7 @@ const proxyConfig = require('./proxy.json');
 
 const url = 'https://egov.uscis.gov/casestatus/mycasestatus.do';
 
-const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT } = config;
+const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT, SEGMENT_INVALID_THRESHOLD } = config;
 const { PROXY_IP, PORT, USERNAME, PASSWORD } = proxyConfig;
 
 // const q = queue(function(payload, callback) {
@@ -153,7 +153,7 @@ function startSleep() {
 
 		if (foundOne && invalidIds) {
 			writeInvalidKeys(invalidIds);
-		} else if (!foundOne && subIt && subIt.value.percentage >= 0.05) {
+		} else if (!foundOne && subIt && subIt.value.percentage >= SEGMENT_INVALID_THRESHOLD) {
 			writeInvalidKeys([ subIt.value.range ]);
 		}
 
@@ -164,7 +164,7 @@ function startSleep() {
 
 		invalidIds = [];
 
-		while (!subIt.done && !banned && (foundOne || subIt.value.percentage < 0.05)) {
+		while (!subIt.done && !banned && (foundOne || subIt.value.percentage < SEGMENT_INVALID_THRESHOLD)) {
 			let counter = 0,
 				ids = [],
 				reqAry = [],
@@ -220,9 +220,10 @@ function startSleep() {
 						validMsgs[ids[i]] = msgs[i];
 						foundOne = true;
 						db.get('cptVT').set('foundOne', true).write();
+						console.log((new Date()).toLocaleString("en-US"),'  !!!! GOOD IDs !!!!   ', ids[i], '----', msgs[i]);
 					} else {
 						invalidIds.push(ids[i]);
-						console.log('==== INVALID IDs ====   ', ids[i]);
+						console.log((new Date()).toLocaleString("en-US"),'  ==== INVALID IDs ====   ', ids[i]);
 					}
 				}
 
