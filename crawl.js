@@ -4,6 +4,7 @@ const cheerio = require('cheerio');
 const low = require('lowdb');
 const ProxyAgent = require('proxy-agent');
 const FileSync = require('lowdb/adapters/FileSync');
+const https = require('https');
 
 let idIterator = require('./idGenerator');
 const config = require('./configuration.json');
@@ -44,7 +45,15 @@ function fetchResult(id) {
 				method: 'POST',
 				url: url,
 				data: bodyFormData,
-				agent: new ProxyAgent(`https://${USERNAME}:${PASSWORD}@${PROXY_IP}:${PORT}`),
+				// agent: new ProxyAgent(`https://${USERNAME}:${PASSWORD}@${PROXY_IP}:${PORT}`),
+				proxy: {
+					host: PROXY_IP,
+					port: PORT,
+					auth: {
+					  username: USERNAME,
+					  password: PASSWORD
+					}
+				},
 				headers: bodyFormData.getHeaders()
 			}).then((res) => res.data || null);
 		}
@@ -52,7 +61,15 @@ function fetchResult(id) {
 			method: 'POST',
 			url: url,
 			data: bodyFormData,
-			agent: new ProxyAgent(`https://${PROXY_IP}:${PORT}`),
+			// httpsAgent: new https.Agent({
+			// 	host: PROXY_IP,
+			// 	port: PORT,
+			// 	rejectUnauthorized: false
+			// }),
+			proxy: {
+				host: PROXY_IP,
+				port: PORT
+			},
 			headers: bodyFormData.getHeaders()
 		}).then((res) => res.data || null);
 	}
@@ -175,6 +192,7 @@ function startSleep() {
 			} catch (err) {
 				console.log('!!!!!!! ERROR !!!!!!those are the ids: ', ids);
 				console.log(err);
+				return;
 			}
 			// console.log(ids);
 			// console.log(htmls);
