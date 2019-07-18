@@ -172,8 +172,8 @@ function startSleep() {
 				validMsgs = {},
 				stringID;
 
-			while (counter < CONCUR_THREAD) {
-				await snooze(TIMEOUT_NO_BAN);
+			while (!subIt.done && counter < CONCUR_THREAD) {
+				await snooze(TIMEOUT_NO_BAN);dsv
 				stringID = subIt.value.stringID;
 				reqAry.push(fetchResult(stringID));
 				requestCount++;
