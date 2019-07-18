@@ -2,7 +2,7 @@ const axios = require('axios');
 const FormData = require('form-data');
 const cheerio = require('cheerio');
 const low = require('lowdb');
-const ProxyAgent = require('proxy-agent');
+// const ProxyAgent = require('proxy-agent');
 const FileSync = require('lowdb/adapters/FileSync');
 const https = require('https');
 
