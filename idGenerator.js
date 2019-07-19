@@ -4,7 +4,9 @@ const exampleSurfix = '6652149';
 
 const rangeDigits = 3;
 
-const maxNumberSegment = '67xxxxx';
+const config = require('./configuration');
+
+const { MAX_NUMBER_KEY: maxNumberKey } = config;
 
 function* idGenerator2(start = 0) {
 	// if (typeof start == 'string') {
@@ -28,7 +30,8 @@ function* idGenerator2(start = 0) {
 		idx2 = start % divisor;
 		skipTo = 0;
 	}
-	const range1 = Number('1' + '0'.repeat(rangeDigits)),
+	const validMaxNumberKey = Number(maxNumberKey.slice(prefix.length));
+	const range1 = Math.floor(validMaxNumberKey / Number('1' + '0'.repeat(exampleSurfix.length - rangeDigits))),
 		range2 = Number('1' + '0'.repeat(exampleSurfix.length - rangeDigits));
 
 	while (idx1 < range1) {

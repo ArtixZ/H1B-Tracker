@@ -1,6 +1,5 @@
 const axios = require("axios")
 const FormData = require('form-data');
-const ProxyAgent = require('proxy-agent');
 const proxyConfig = require('./proxy.json');
 
 const { PROXY_IP, PORT, USERNAME, PASSWORD } = proxyConfig;
@@ -15,7 +14,6 @@ const bodyFormData = new FormData();
 		method: 'POST',
         url: url,
         data: bodyFormData,
-        agent: new ProxyAgent("https://admin:awslambdaproxy@54.224.130.17:8080"),
         
 		headers: bodyFormData.getHeaders()
     }).then((res) => res.data || null)
