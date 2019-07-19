@@ -78,7 +78,8 @@ function fetchResult(id) {
 				port: PORT
 			},
 			headers: bodyFormData.getHeaders()
-		}).then(res => res.data || null);
+		}).then(res => res.data || null)
+		.catch(err => err);
 	}
 
 	return axios({
