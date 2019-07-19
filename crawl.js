@@ -1,4 +1,5 @@
 const axios = require('axios');
+axios.defaults.timeout = 10000;
 const FormData = require('form-data');
 const cheerio = require('cheerio');
 const low = require('lowdb');
