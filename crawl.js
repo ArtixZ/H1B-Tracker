@@ -12,7 +12,13 @@ const proxyConfig = require('./proxy.json');
 
 const url = 'https://egov.uscis.gov/casestatus/mycasestatus.do';
 
-const { TIMEOUT_NO_BAN, CONCUR_THREAD, SLEEP_PERIOD, SLEEP_INTERVAL_REQUEST_COUNT, SEGMENT_INVALID_THRESHOLD } = config;
+const {
+	TIMEOUT_NO_BAN,
+	CONCUR_THREAD,
+	SLEEP_PERIOD,
+	SLEEP_INTERVAL_REQUEST_COUNT,
+	SEGMENT_INVALID_THRESHOLD
+} = config;
 const { PROXY_IP, PORT, USERNAME, PASSWORD } = proxyConfig;
 
 // const q = queue(function(payload, callback) {
@@ -39,8 +45,8 @@ function fetchResult(id) {
 	bodyFormData.append('appReceiptNum', id);
 	bodyFormData.append('caseStatusSearchBtn', 'CHECK+STATUS');
 
-	if(PROXY_IP && PORT) {
-		if(USERNAME && PASSWORD) {
+	if (PROXY_IP && PORT) {
+		if (USERNAME && PASSWORD) {
 			return axios({
 				method: 'POST',
 				url: url,
@@ -50,12 +56,12 @@ function fetchResult(id) {
 					host: PROXY_IP,
 					port: PORT,
 					auth: {
-					  username: USERNAME,
-					  password: PASSWORD
+						username: USERNAME,
+						password: PASSWORD
 					}
 				},
 				headers: bodyFormData.getHeaders()
-			}).then((res) => res.data || null);
+			}).then(res => res.data || null);
 		}
 		return axios({
 			method: 'POST',
@@ -71,7 +77,7 @@ function fetchResult(id) {
 				port: PORT
 			},
 			headers: bodyFormData.getHeaders()
-		}).then((res) => res.data || null);
+		}).then(res => res.data || null);
 	}
 
 	return axios({
@@ -79,22 +85,38 @@ function fetchResult(id) {
 		url: url,
 		data: bodyFormData,
 		headers: bodyFormData.getHeaders()
-	}).then((res) => res.data || null);
+	}).then(res => res.data || null);
 }
 
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
-db.defaults({ cptVT: { records: [], invalidRecords: [], currentIdx: 0, foundOne: false } }).write();
+db
+	.defaults({
+		cptVT: {
+			records: [],
+			invalidRecords: [],
+			currentIdx: 0,
+			foundOneInSubIt: false
+		}
+	})
+	.write();
 
 const whereILeft = db.get('cptVT').get('currentIdx').value();
-const didIFoundOne = db.get('cptVT').get('foundOne').value();
+const didIFoundOne = db.get('cptVT').get('foundOneInSubIt').value();
 
 function writeMessages(msgObjs) {
 	const ids = Object.keys(msgObjs);
 	if (ids.length > 0) {
-		for(let id of ids) {
-			db.get('cptVT').get('records').push({id, message: msgObjs[id]}).write();
+		for (let id of ids) {
+			db
+				.get('cptVT')
+				.get('records')
+				.push({
+					id,
+					message: msgObjs[id]
+				})
+				.write();
 		}
 	}
 }
@@ -105,7 +127,7 @@ function writeInvalidKeys(keys) {
 	}
 }
 
-const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 let interval;
 
@@ -124,6 +146,7 @@ let interval;
 function msleep(n) {
 	Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, n);
 }
+
 function sleepThread(n) {
 	msleep(n * 1000);
 }
@@ -145,26 +168,37 @@ function startSleep() {
 	let currentIt = idIterator.next();
 	// startInterval();
 
-	let foundOne = didIFoundOne,
+	let foundOneInSubIt = didIFoundOne,
+		invalidIds,
 		subIt;
 	while (!currentIt.done && !banned) {
 		//  const res = await fetchResult(stringID)
-		let invalidIds
 
-		if (foundOne && invalidIds) {
-			writeInvalidKeys(invalidIds);
-		} else if (!foundOne && subIt && subIt.value.percentage >= SEGMENT_INVALID_THRESHOLD) {
-			writeInvalidKeys([ subIt.value.range ]);
-		}
+		try {
+			if (invalidIds && foundOneInSubIt) {
+				writeInvalidKeys(invalidIds);
+			} else if (
+				!foundOneInSubIt &&
+				subIt &&
+				subIt.value.percentage >= SEGMENT_INVALID_THRESHOLD
+			) {
+				writeInvalidKeys([subIt.value.range]);
+			}
+		} catch (err) {}
 
-		db.get('cptVT').set('foundOne', foundOne).write();
+		// db.get('cptVT').set('foundOneInSubIt', foundOneInSubIt).write();
 
 		let subIdIterator = currentIt.value();
 		subIt = subIdIterator.next();
 
 		invalidIds = [];
 
-		while (!subIt.done && !banned && (foundOne || subIt.value.percentage < SEGMENT_INVALID_THRESHOLD)) {
+		while (
+			!subIt.done &&
+			!banned &&
+			(foundOneInSubIt ||
+				subIt.value.percentage < SEGMENT_INVALID_THRESHOLD)
+		) {
 			let counter = 0,
 				ids = [],
 				reqAry = [],
@@ -173,7 +207,7 @@ function startSleep() {
 				stringID;
 
 			while (!subIt.done && counter < CONCUR_THREAD) {
-				await snooze(TIMEOUT_NO_BAN);dsv
+				await snooze(TIMEOUT_NO_BAN);
 				stringID = subIt.value.stringID;
 				reqAry.push(fetchResult(stringID));
 				requestCount++;
@@ -218,12 +252,22 @@ function startSleep() {
 				for (let i = 0; i < msgs.length; i++) {
 					if (!!msgs[i]) {
 						validMsgs[ids[i]] = msgs[i];
-						foundOne = true;
-						db.get('cptVT').set('foundOne', true).write();
-						console.log((new Date()).toLocaleString("en-US"),'  !!!! GOOD IDs !!!!   ', ids[i], '----', msgs[i]);
+						foundOneInSubIt = true;
+						db.get('cptVT').set('foundOneInSubIt', true).write();
+						console.log(
+							new Date().toLocaleString('en-US'),
+							'  **** GOOD IDs ****   ',
+							ids[i],
+							'----',
+							msgs[i]
+						);
 					} else {
 						invalidIds.push(ids[i]);
-						console.log((new Date()).toLocaleString("en-US"),'  ==== INVALID IDs ====   ', ids[i]);
+						console.log(
+							new Date().toLocaleString('en-US'),
+							'  ==== INVALID IDs ====   ',
+							ids[i]
+						);
 					}
 				}
 
@@ -241,6 +285,7 @@ function startSleep() {
 
 		if (!banned) {
 			currentIt = idIterator.next();
+			db.get('cptVT').set('foundOneInSubIt', false).write();
 		}
 	}
 
