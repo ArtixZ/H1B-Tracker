@@ -62,8 +62,8 @@ function fetchResult(id) {
 					}
 				},
 				headers: bodyFormData.getHeaders()
-			}).then(res => res.data || null)
-			.catch(err => err);
+			}).then(res => res.data || null);
+			
 		}
 		return axios({
 			method: 'POST',
@@ -80,7 +80,7 @@ function fetchResult(id) {
 			},
 			headers: bodyFormData.getHeaders()
 		}).then(res => res.data || null)
-		.catch(err => err);
+		
 	}
 
 	return axios({
@@ -89,7 +89,6 @@ function fetchResult(id) {
 		data: bodyFormData,
 		headers: bodyFormData.getHeaders()
 	}).then(res => res.data || null)
-	.catch(err => err);
 }
 
 const adapter = new FileSync('db.json');
@@ -229,7 +228,7 @@ function startSleep() {
 				}
 			} catch (err) {
 				console.log('!!!!!!! ERROR !!!!!!those are the ids: ', ids);
-				console.log(err);
+				console.log('error message: ', err.toString());
 				return;
 			}
 			// console.log(ids);
