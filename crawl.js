@@ -62,7 +62,8 @@ function fetchResult(id) {
 					}
 				},
 				headers: bodyFormData.getHeaders()
-			}).then(res => res.data || null);
+			}).then(res => res.data || null)
+			.catch(err => err);
 		}
 		return axios({
 			method: 'POST',
@@ -87,7 +88,8 @@ function fetchResult(id) {
 		url: url,
 		data: bodyFormData,
 		headers: bodyFormData.getHeaders()
-	}).then(res => res.data || null);
+	}).then(res => res.data || null)
+	.catch(err => err);
 }
 
 const adapter = new FileSync('db.json');
