@@ -1,16 +1,24 @@
 const { spawn } = require('child_process');
+const axios = require('axios');
+
+const proxyConfig = require('./conf.json');
+
+let banned = false;
 
 function spawnProxy() {
-	const proxyProcess = spawn("scrapoxy", [ "start", "conf.json", "-d" ]);
+	let notCrawling = true;
+
+	const proxyProcess = spawn('scrapoxy', [ 'start', 'conf.json', '-d' ]);
 	proxyProcess.stdout.on('data', (data) => {
 		console.log(`stdout: ${data}`);
-		if (data.find('required:1 / actual:1') > 0) {
-			spawnCrawl();
-		}
 	});
 
 	proxyProcess.stderr.on('data', (data) => {
 		console.log(`stderr: ${data}`);
+		if (notCrawling && String(data).search('required:1 / actual:1') >= 0) {
+			notCrawling = false;
+			spawnCrawl();
+		}
 	});
 
 	proxyProcess.on('close', (code) => {
@@ -19,32 +27,45 @@ function spawnProxy() {
 }
 
 function spawnCrawl() {
-	const proxyProcess = spawn('node', [ 'crawl.js' ]);
-	proxyProcess.stdout.on('data', (data) => {
+	const crawlProcess = spawn('node', [ 'crawl.js' ]);
+	crawlProcess.stdout.on('data', (data) => {
 		console.log(`stdout: ${data}`);
+		if (String(data).search('It was reported to us that your IP address') >= 0) {
+			axios
+				.get('http://localhost:8889/api/instances', {
+					headers: { Authorization: new Buffer(proxyConfig.commander.password).toString('base64') }
+				})
+				.then((res) => res.data)
+				.then((data) => {
+					const stopPromises = data.map((element) => {
+						axios.post('http://localhost:8889/api/instances/stop', {
+							headers: { Authorization: new Buffer(proxyConfig.commander.password).toString('base64') },
+							body: {
+								name: element.name
+							}
+						});
+					});
+					Promise.all(stopPromises).then((res) => {
+						console.log(res);
+					});
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		}
 	});
 
-	proxyProcess.stderr.on('data', (data) => {
+	crawlProcess.stderr.on('data', (data) => {
 		console.log(`stderr: ${data}`);
 	});
 
-	proxyProcess.on('close', (code) => {
+	crawlProcess.on('close', (code) => {
 		console.log(`child process exited with code ${code}`);
 	});
 }
 
-function test() {
-	const child = spawn('pwd');
-	child.stdout.on('data', (data) => {
-		console.log(`stdout: ${data}`);
-	});
+function restartProxy() {}
 
-	child.stderr.on('data', (data) => {
-		console.log(`stderr: ${data}`);
-	});
-	child.on('exit', function(code, signal) {
-		console.log('child process exited with ' + `code ${code} and signal ${signal}`);
-	});
-}
+function restartCrawl() {}
 
 spawnProxy();
