@@ -78,6 +78,10 @@ function spawnCrawl() {
 
 	crawlProcess.on('close', (code) => {
 		console.log(`child process exited with code ${code}`);
+
+		setTimeout(() => {
+			spawnCrawl();
+		}, 120000);
 	});
 }
 
