@@ -17,7 +17,7 @@ function spawnProxy() {
 
 	proxyProcess.stderr.on('data', (data) => {
 		console.log(`stderr: ${data}`);
-		if (notCrawling && String(data).search('required:1 / actual:1') >= 0) {
+		if (notCrawling && String(data).search('changeAlive: true => true') >= 0) {
 			notCrawling = false;
 			spawnCrawl();
 		}
@@ -60,7 +60,7 @@ function spawnCrawl() {
 							// wait for 2 mins and restart the crawl process
 							setTimeout(() => {
 								spawnCrawl();
-							}, 120000);
+							}, 80000);
 						} else {
 							console.log('some instance is not stopped correctly!!');
 						}
@@ -71,22 +71,28 @@ function spawnCrawl() {
 				});
 		}
 	});
+	let errored = false;
 
 	crawlProcess.stderr.on('data', (data) => {
 		console.log(`stderr: ${data}`);
+		if (!errored) {
+			errored = true;
+
+			console.time('Time restart');
+
+			setTimeout(() => {
+				console.timeEnd('Time restart');
+
+				spawnCrawl();
+			}, 120000);
+		}
 	});
 
 	crawlProcess.on('close', (code) => {
 		console.log(`child process exited with code ${code}`);
-
-		setTimeout(() => {
-			spawnCrawl();
-		}, 120000);
+		if (code == 1) {
+		}
 	});
 }
-
-function restartProxy() {}
-
-function restartCrawl() {}
 
 spawnProxy();
