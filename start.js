@@ -37,6 +37,7 @@ function spawnProxy() {
 
 	proxyProcess.on('close', (code) => {
 		console.log(`child process exited with code ${code}`);
+		fs.appendFileSync(path.resolve(`./logs/proxy/${formatDate()}`), `going to exit process, code ${code}`);
 	});
 }
 
@@ -76,6 +77,8 @@ function spawnCrawl() {
 
 	crawlProcess.on('close', (code) => {
 		console.log(`child process exited with code ${code}`);
+		fs.appendFileSync(path.resolve(`./logs/crawl/${formatDate()}`), `going to exit process, code ${code}`);
+
 		if (code == 1) {
 		}
 	});
