@@ -90,7 +90,11 @@ function spawnCrawl() {
 	let errored = false;
 
 	crawlProcess.stderr.on('data', (data) => {
-		console.log(`stderr: ${data}`);
+		console.log(`crawl-stderr: ${data}`);
+		console.log('going to restart in 2 min!');
+		fs.appendFileSync(path.resolve(`./logs/crawl/${formatDate()}`), `${formatDateTime()} -- ${data}`);
+		fs.appendFileSync(path.resolve(`./logs/crawl/${formatDate()}`), 'going to restart in 2 min!');
+
 		if (!errored) {
 			errored = true;
 
