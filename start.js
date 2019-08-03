@@ -16,7 +16,7 @@ function spawnProxy() {
 	});
 
 	proxyProcess.stderr.on('data', (data) => {
-		console.log(`stderr: ${data}`);
+		console.log(`stderr:  ${new Date().toLocaleString('en-US')} ${data}`);
 		if (notCrawling && String(data).search('changeAlive: true => true') >= 0) {
 			notCrawling = false;
 			spawnCrawl();
