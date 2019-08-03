@@ -211,7 +211,7 @@ function startSleep() {
 				}
 			} catch (err) {
 				console.log('!!!!!!! ERROR !!!!!!those are the ids: ', ids);
-				console.log('error message: ', err.toString());
+				console.error('error message: ', err.toString(), 1);
 				return;
 			}
 			// console.log(ids);
