@@ -1,5 +1,6 @@
 const { spawn } = require('child_process');
 const axios = require('axios');
+const fs = require('fs');
 
 const proxyConfig = require('./conf.json');
 
@@ -13,10 +14,19 @@ function spawnProxy() {
 	proxyProcess = spawn('scrapoxy', [ 'start', 'conf.json', '-d' ]);
 	proxyProcess.stdout.on('data', (data) => {
 		console.log(`stdout: ${data}`);
+		fs.writeFileSync(
+			`./logs/proxy/${new Date().toLocaleDateString('en-US')}`,
+			`${new Date().toLocaleString('en-US')} -- ${data}`
+		);
 	});
 
 	proxyProcess.stderr.on('data', (data) => {
-		console.log(`stderr:  ${new Date().toLocaleString('en-US')} ${data}`);
+		console.log(`stderr:  ${new Date().toLocaleString('en-US')} -- ${data}`);
+		fs.writeFileSync(
+			`./logs/proxy/${new Date().toLocaleDateString('en-US')}`,
+			`${new Date().toLocaleString('en-US')} -- ${data}`
+		);
+
 		if (notCrawling && String(data).search('changeAlive: true => true') >= 0) {
 			notCrawling = false;
 			spawnCrawl();
@@ -32,6 +42,10 @@ function spawnCrawl() {
 	crawlProcess = spawn('node', [ 'crawl.js' ]);
 	crawlProcess.stdout.on('data', (data) => {
 		console.log(`stdout: ${data}`);
+		fs.writeFileSync(
+			`./logs/crawl/${new Date().toLocaleDateString('en-US')}`,
+			`${new Date().toLocaleString('en-US')} -- ${data}`
+		);
 		if (String(data).search('It was reported to us that your IP address') >= 0) {
 			banned = true;
 
