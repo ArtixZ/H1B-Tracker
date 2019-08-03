@@ -5,8 +5,6 @@ const path = require('path');
 
 const proxyConfig = require('./conf.json');
 
-let banned = false;
-
 let proxyProcess, crawlProcess;
 
 function formatDate() {
@@ -49,42 +47,10 @@ function spawnCrawl() {
 		fs.appendFileSync(path.resolve(`./logs/crawl/${formatDate()}`), `${formatDateTime()} -- ${data}`);
 
 		if (String(data).search('It was reported to us that your IP address') >= 0) {
-			banned = true;
-
-			axios
-				.get('http://localhost:8889/api/instances', {
-					headers: { Authorization: new Buffer(proxyConfig.commander.password).toString('base64') }
-				})
-				.then((res) => res.data)
-				.then((data) => {
-					const stopPromises = data.map((element) =>
-						axios.post(
-							'http://localhost:8889/api/instances/stop',
-							{
-								name: element.name
-							},
-							{
-								headers: {
-									Authorization: new Buffer(proxyConfig.commander.password).toString('base64')
-								}
-							}
-						)
-					);
-					Promise.all(stopPromises).then((results) => {
-						const success = results.reduce((pre, cur) => cur.status == 200 && pre, true);
-						if (success) {
-							// wait for 2 mins and restart the crawl process
-							setTimeout(() => {
-								spawnCrawl();
-							}, 80000);
-						} else {
-							console.log('some instance is not stopped correctly!!');
-						}
-					});
-				})
-				.catch((err) => {
-					console.log(err);
-				});
+			restartProxyNodes();
+		}
+		if (String(data).search('Error: timeout of') >= 0) {
+			restartProxyNodes();
 		}
 	});
 	let errored = false;
@@ -115,4 +81,40 @@ function spawnCrawl() {
 	});
 }
 
+function restartProxyNodes() {
+	return axios
+		.get('http://localhost:8889/api/instances', {
+			headers: { Authorization: new Buffer(proxyConfig.commander.password).toString('base64') }
+		})
+		.then((res) => res.data)
+		.then((data) => {
+			const stopPromises = data.map((element) =>
+				axios.post(
+					'http://localhost:8889/api/instances/stop',
+					{
+						name: element.name
+					},
+					{
+						headers: {
+							Authorization: new Buffer(proxyConfig.commander.password).toString('base64')
+						}
+					}
+				)
+			);
+			Promise.all(stopPromises).then((results) => {
+				const success = results.reduce((pre, cur) => cur.status == 200 && pre, true);
+				if (success) {
+					// wait for 2 mins and restart the crawl process
+					setTimeout(() => {
+						spawnCrawl();
+					}, 80000);
+				} else {
+					console.log('some instance is not stopped correctly!!');
+				}
+			});
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+}
 spawnProxy();
