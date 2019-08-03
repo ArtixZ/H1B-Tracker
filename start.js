@@ -14,18 +14,22 @@ function formatDate() {
 	return today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
 }
 
+function formatDateTime() {
+	return new Date().toLocaleString();
+}
+
 function spawnProxy() {
 	let notCrawling = true;
 
 	proxyProcess = spawn('scrapoxy', [ 'start', 'conf.json', '-d' ]);
 	proxyProcess.stdout.on('data', (data) => {
 		console.log(`stdout: ${data}`);
-		fs.writeFileSync(path.resolve(`./logs/proxy/${formatDate()}`), `${formatDate()} -- ${data}`);
+		fs.writeFileSync(path.resolve(`./logs/proxy/${formatDate()}`), `${formatDateTime()} -- ${data}`);
 	});
 
 	proxyProcess.stderr.on('data', (data) => {
 		console.log(`stderr:  ${formatDate()} -- ${data}`);
-		fs.writeFileSync(path.resolve(`./logs/proxy/${formatDate()}`), `${formatDate()} -- ${data}`);
+		fs.writeFileSync(path.resolve(`./logs/proxy/${formatDate()}`), `${formatDateTime()} -- ${data}`);
 
 		if (notCrawling && String(data).search('changeAlive: true => true') >= 0) {
 			notCrawling = false;
@@ -42,7 +46,8 @@ function spawnCrawl() {
 	crawlProcess = spawn('node', [ 'crawl.js' ]);
 	crawlProcess.stdout.on('data', (data) => {
 		console.log(`stdout: ${data}`);
-		fs.writeFileSync(path.resolve(`./logs/crawl/${formatDate()}`), `${formatDate()} -- ${data}`);
+		fs.writeFileSync(path.resolve(`./logs/crawl/${formatDate()}`), `${formatDateTime()} -- ${data}`);
+
 		if (String(data).search('It was reported to us that your IP address') >= 0) {
 			banned = true;
 
