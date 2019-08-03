@@ -28,7 +28,7 @@ function spawnProxy() {
 	});
 
 	proxyProcess.stderr.on('data', (data) => {
-		console.log(`stderr:  ${formatDate()} -- ${data}`);
+		console.log(`stderr:  ${formatDateTime()} -- ${data}`);
 		fs.writeFileSync(path.resolve(`./logs/proxy/${formatDate()}`), `${formatDateTime()} -- ${data}`);
 
 		if (notCrawling && String(data).search('changeAlive: true => true') >= 0) {
