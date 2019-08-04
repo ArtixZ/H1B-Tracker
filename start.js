@@ -115,7 +115,7 @@ function restartProxyNodes() {
 
 					setTimeout(() => {
 						spawnCrawl();
-					}, 80000);
+					}, 180000);
 				} else {
 					console.log('some instance is not stopped correctly!!');
 				}
