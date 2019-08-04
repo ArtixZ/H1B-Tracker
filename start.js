@@ -113,7 +113,7 @@ function restartProxyNodes() {
 					// wait for 2 mins and restart the crawl process
 					fs.appendFileSync(
 						path.resolve(`./logs/crawl/${formatDate()}`),
-						`${formatDateTime()}going to scale up nodes and restart crawling in 2 min!`
+						`${formatDateTime()} going to scale up nodes and restart crawling in 2 min! `
 					);
 
 					setTimeout(() => {
