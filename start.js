@@ -77,7 +77,10 @@ function spawnCrawl() {
 
 	crawlProcess.on('close', (code) => {
 		console.log(`child process exited with code ${code}`);
-		fs.appendFileSync(path.resolve(`./logs/crawl/${formatDate()}`), `going to exit process, code ${code}`);
+		fs.appendFileSync(
+			path.resolve(`./logs/crawl/${formatDate()}`),
+			`${formatDateTime()} going to exit process, code ${code}`
+		);
 
 		if (code == 1) {
 		}
@@ -110,7 +113,7 @@ function restartProxyNodes() {
 					// wait for 2 mins and restart the crawl process
 					fs.appendFileSync(
 						path.resolve(`./logs/crawl/${formatDate()}`),
-						'going to scale up nodes and restart crawling in 2 min!'
+						`${formatDateTime()}going to scale up nodes and restart crawling in 2 min!`
 					);
 
 					setTimeout(() => {
