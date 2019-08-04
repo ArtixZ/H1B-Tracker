@@ -151,7 +151,7 @@ let requestCount = 0;
 function startSleep() {
 	console.log('!!!!!!!start sleep!!!!!!!!!!!!!!!!!');
 	// await snooze(SLEEP_PERIOD*1000)
-	sleepThread(SLEEP_PERIOD);
+	sleepThread((Math.random() + 1) * SLEEP_PERIOD);
 	console.log('!!!!!!!finish sleep!!!!!!!!!!!!!!!!!');
 	requestCount = 0;
 }
@@ -193,7 +193,7 @@ function startSleep() {
 				stringID;
 
 			while (!subIt.done && counter < CONCUR_THREAD) {
-				await snooze(TIMEOUT_NO_BAN);
+				await snooze((Math.random() + 0.5) * TIMEOUT_NO_BAN);
 				stringID = subIt.value.stringID;
 				reqAry.push(fetchResult(stringID));
 				requestCount++;
