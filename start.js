@@ -108,6 +108,11 @@ function restartProxyNodes() {
 				const success = results.reduce((pre, cur) => cur.status == 200 && pre, true);
 				if (success) {
 					// wait for 2 mins and restart the crawl process
+					fs.appendFileSync(
+						path.resolve(`./logs/crawl/${formatDate()}`),
+						'going to scale up nodes and restart crawling in 2 min!'
+					);
+
 					setTimeout(() => {
 						spawnCrawl();
 					}, 80000);
